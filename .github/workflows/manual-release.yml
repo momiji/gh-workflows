@@ -2,6 +2,8 @@ name: Manual semantic release with docker build
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types: [manual-semantic]
 
 permissions:
   contents: read
