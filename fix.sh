@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 cd "$(dirname "$0")"
 
-git status -s | sed -nr "/^(M| M)/p" | awk '{print $2}' | xargs -i git add {}
+git status -s | sed -nr "/^(A|M| M)/p" | awk '{print $2}' | xargs -i git add {}
 git commit -m "configure workflows"
 
 date > fix
