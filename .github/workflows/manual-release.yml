@@ -63,7 +63,6 @@ jobs:
           type=semver,pattern=v{{major}}.{{minor}}.{{patch}},value=${{steps.dotenv.outputs.RELEASE_VERSION}}
           type=semver,pattern=v{{major}}.{{minor}},value=${{steps.dotenv.outputs.RELEASE_VERSION}}
           type=edge
-          {{#if (regexMatch github.ref "^refs/tags/v[0-9]+\.x" )}}type=semver,pattern=v{{major}},value=${{steps.dotenv.outputs.RELEASE_VERSION}}{{/if}}
 
     - name: Build and push Docker images
       uses: docker/build-push-action@v4
