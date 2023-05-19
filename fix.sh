@@ -1,2 +1,2 @@
 date > fix
-git commit -m "fix: automatic"
+git commit -m "fix: automatic" fix
