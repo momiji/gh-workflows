@@ -2,4 +2,4 @@
 set -Eeuo pipefail
 cd "$(dirname "$0")"
 
-gh act -s GITHIB_TOKEN=$(gh auth token) workflow_dispatch
+gh act -s GITHUB_TOKEN=$(gh auth token) workflow_dispatch
