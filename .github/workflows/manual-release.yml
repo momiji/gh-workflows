@@ -1,15 +1,42 @@
-name: Docker Image CI
+name: Manual semantic release with docker build
 
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
 
-  build:
+  release:
 
+    name: Release
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Setup NodeJs
+      uses: actions/setup-node@v3
+      with:
+        node-version: "lts/*"
+
+    - name: Install semantic release
+      run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog
+
+    - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+      run: npm audit signatures     
+
+    - name: Create release
+      run: npx semantic-release
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: >
+        docker build .
+        --file Dockerfile
+        --build-arg PROJECT_VERSION="$PROJECT_VERSION"
+        --tag gh-workflows:$(date +%s)
