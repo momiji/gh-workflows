@@ -11,4 +11,5 @@ git commit -m "fix: automatic" fix
 git pull --rebase
 git push
 
+GITHUB_TOKEN=$(gh auth token)
 curl -v -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/momiji/gh-workflows/dispatches -d '{ "event_type": "manual-semantic" }'
