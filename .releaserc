@@ -15,6 +15,11 @@
         "assets": ["CHANGELOG.md"]
       }
     ],
+    ["@semantic-release/github", {
+      "assets": [
+        {"path": "fix", "label": "Fix file"}
+      ]
+    }],
     [
       "@semantic-release/exec",
       {
