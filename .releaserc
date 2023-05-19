@@ -18,8 +18,8 @@
     [
       "@semantic-release/exec",
       {
-        "verifyConditions": "rm -f .env",
-        "prepareCmd": "echo RELEASE_VERSION=${nextRelease.version} >> .env"
+        "verifyConditions": "rm -f .nextRelease",
+        "prepareCmd": "echo version=${nextRelease.version} >> .nextRelease"
       }
     ]
   ]

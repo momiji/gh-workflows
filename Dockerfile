@@ -11,7 +11,7 @@ RUN set -Eeux && \
     go mod download && \
     go mod verify
 
-RUN CGO_ENABLED=0 go build -trimpath -ldflags="-w -s -X 'main.Version=v${RELEASE_VERSION}'"
+RUN CGO_ENABLED=0 go build -trimpath -ldflags="-w -s -X 'main.Version=${RELEASE_VERSION}'"
 #RUN go test -cover -v ./...
 
 # Stage 2 - alpine image
