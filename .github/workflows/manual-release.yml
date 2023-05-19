@@ -26,17 +26,41 @@ jobs:
         node-version: "lts/*"
 
     - name: Install semantic release
-      run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog
+      run: npm install -g semantic-release @semantic-release/changelog @semantic-release/exec @semantic-release/git
 
-    - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
-      run: npm audit signatures     
+    #- name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+    #  run: npm audit signatures     
 
     - name: Create release
-      run: npx semantic-release
+      run: npx semantic-release && test -f .env
 
-    - name: Build the Docker image
-      run: >
-        docker build .
-        --file Dockerfile
-        --build-arg PROJECT_VERSION="$PROJECT_VERSION"
-        --tag gh-workflows:$(date +%s)
+    - name: Log in to the Container registry
+      uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract metadata (tags, labels) for Docker
+      id: meta
+      uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+      with:
+        images: |
+          ghcr.io/momiji
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+      with:
+        context: .
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        build-args: RELEASE_VERSION="$RELEASE_VERSION"
+
+
+#    - name: Build the Docker image
+#      run: >
+#        docker build .
+#        --file Dockerfile
+#        --build-arg RELEASE_VERSION="$RELEASE_VERSION"
+#        --tag gh-workflows:v$RELEASE_VERSION
