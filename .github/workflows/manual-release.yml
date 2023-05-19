@@ -42,7 +42,7 @@ jobs:
     
     - name: Read environment
       id: dotenv
-      uses: actions/dotenv-action@v1
+      uses: ./.github/actions/dotenv-action
 
     - name: Log in to the Container registry
       uses: docker/login-action@v2
