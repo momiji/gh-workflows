@@ -1,3 +1,10 @@
+## [1.1.11](https://github.com/momiji/gh-workflows/compare/v1.1.10...v1.1.11) (2023-05-19)
+
+
+### Bug Fixes
+
+* automatic ([120448b](https://github.com/momiji/gh-workflows/commit/120448b83d0c76cd0651a44ba05339b772452e6f))
+
 ## [1.1.10](https://github.com/momiji/gh-workflows/compare/v1.1.9...v1.1.10) (2023-05-19)
 
 
