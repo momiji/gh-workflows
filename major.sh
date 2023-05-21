@@ -6,7 +6,7 @@ git commit -m "configure workflows" ||:
 
 date > fix
 git add fix
-git commit -m "feat: automatic\n\nBREAKING CHANGE: new something"
+git commit -m $'feat: automatic\n\nBREAKING CHANGE: new something'
 
 git pull --rebase
 git push
