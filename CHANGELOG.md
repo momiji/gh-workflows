@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/momiji/gh-workflows/compare/v1.3.0...v2.0.0) (2023-05-21)
+
+
+### Features
+
+* automatic ([cadabd2](https://github.com/momiji/gh-workflows/commit/cadabd2fed04df4ae276455d7f3c3678ed63676e))
+
+
+### BREAKING CHANGES
+
+* new something
+
 # [1.3.0](https://github.com/momiji/gh-workflows/compare/v1.2.0...v1.3.0) (2023-05-21)
 
 
