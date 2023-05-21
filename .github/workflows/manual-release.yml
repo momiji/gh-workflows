@@ -70,9 +70,9 @@ jobs:
         images: |
           ghcr.io/momiji/gh-workflows
         tags: |
-          type=semver,pattern=v{{major}}.{{minor}}.{{patch}},value=${{ steps.release.outputs.version }}
-          type=semver,pattern=v{{major}}.{{minor}},value=${{ steps.release.outputs.version }}
-          type=semver,pattern=v{{major}},value=${{ steps.release.outputs.version }},enable=${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) || steps.release.outputs.major == 'true' }}
+          type=semver,pattern={{major}}.{{minor}}.{{patch}},value=${{ steps.release.outputs.version }}
+          type=semver,pattern={{major}}.{{minor}},value=${{ steps.release.outputs.version }}
+          type=semver,pattern={{major}},value=${{ steps.release.outputs.version }},enable=${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) || steps.release.outputs.major == 'true' }}
           type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
 
     - name: Build and push Docker images
