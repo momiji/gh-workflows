@@ -92,3 +92,9 @@ $ gh workflow run --ref $( git branch --show-current )
 
 Procedure:
 - 
+
+$ gh repo clone gh-workflows -- beta
+$ git checkout main -b beta
+Switched to a new branch 'beta'
+$ git push --set-upstream origin beta
+Branch 'beta' set up to track remote branch 'beta' from 'origin'.
