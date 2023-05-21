@@ -6,13 +6,25 @@
     [
       "@semantic-release/changelog",
       {
-        "changelogFile": "docs/CHANGELOG.md"
+        "changelogFile": "CHANGELOG.md"
       }
     ],
     [
       "@semantic-release/git",
       {
         "assets": ["CHANGELOG.md"]
+      }
+    ],
+    ["@semantic-release/github", {
+      "assets": [
+        {"path": "fix", "label": "Fix file"}
+      ]
+    }],
+    [
+      "@semantic-release/exec",
+      {
+        "verifyConditions": "rm -f .nextRelease",
+        "prepareCmd": "echo version=${nextRelease.version} >> .nextRelease"
       }
     ]
   ]
