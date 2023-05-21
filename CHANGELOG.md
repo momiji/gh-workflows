@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/momiji/gh-workflows/compare/v1.2.0...v1.3.0) (2023-05-21)
+
+
+### Features
+
+* automatic\n\nBREAKING CHANGE: new something ([2b207e2](https://github.com/momiji/gh-workflows/commit/2b207e23719834221a590e1d04cb3b2f131eac91))
+
 # [1.2.0](https://github.com/momiji/gh-workflows/compare/v1.1.21...v1.2.0) (2023-05-21)
 
 
