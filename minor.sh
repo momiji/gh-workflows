@@ -6,7 +6,7 @@ git commit -m "configure workflows" ||:
 
 date > fix
 git add fix
-git commit -m "fix: automatic"
+git commit -m "feat: automatic"
 
 git pull --rebase
 git push
