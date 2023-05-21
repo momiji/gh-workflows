@@ -4,6 +4,12 @@ set -Eeuo pipefail
 git status -s | sed -nr "/^(A|M| M)/p" | awk '{print $2}' | xargs -i git add {}
 git commit -m "configure workflows" ||:
 
+BASE="$( basename "$(pwd)" )"
+[[ "$BASE" = *".x" ]] && {
+    rsync -aicO ../.github/ .github/
+    rsync -aicO ../.releaserc .
+}
+
 date > fix
 git add fix
 git commit -m "feat: automatic"
