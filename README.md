@@ -23,16 +23,18 @@ Procedure:
 
 ```sh
 # get last 1.0 tag
-$ git tag | sort -V | grep -F v1.0. | tail -1
+$ BR=1.0
+$ TAG=$( git tag | sort -V | grep -F v$BR. | tail -1 )
+$ echo $TAG
 v1.0.0
 
 # create new branch from existing tag
-$ gh repo clone gh-workflows -- 1.0.x
+$ gh repo clone gh-workflows -- $BR.x
 Cloning into '1.0.x'...
-$ cd 1.0.x
-$ git checkout v1.0.0 -b 1.0.x
+$ cd $BR.x
+$ git checkout $TAG -b $BR.x
 Switched to a new branch 'v1.0.x'
-$ git push --set-upstream origin 1.0.x
+$ git push --set-upstream origin $BR.x
 Branch '1.0.x' set up to track remote branch '1.0.x' from 'origin'.
 
 # retrieve workflows and/or .releaserc from main branch
@@ -45,7 +47,7 @@ $ cp ../Dockerfile .
 ...
 
 # run workflow
-$ gh workflow run --ref 1.0.x
+$ gh workflow run --ref $( git branch --show-current )
 ```
 
 ## Major match
@@ -59,17 +61,19 @@ Procedure:
 
 ```sh
 # get last 1.0 tag
-$ git tag | sort -V | grep -F v1. | tail -1
-v1.0.0
+$ BR=1
+$ TAG=$( git tag | sort -V | grep -F v$BR. | tail -1 )
+$ echo $TAG
+v1.3.0
 
 # create new branch from existing tag
-$ gh repo clone gh-workflows -- 1.x
+$ gh repo clone gh-workflows -- $BR.x
 Cloning into '1.x'...
-$ cd 1.x
-$ git checkout v1.0.0 -b 1.x
-Switched to a new branch 'v1.0.x'
-$ git push --set-upstream origin 1.0.x
-Branch '1.0.x' set up to track remote branch '1.0.x' from 'origin'.
+$ cd $BR.x
+$ git checkout $TAG -b $BR.x
+Switched to a new branch 'v1.x'
+$ git push --set-upstream origin $BR.x
+Branch '1.x' set up to track remote branch '1.x' from 'origin'.
 
 # retrieve workflows and/or .releaserc from main branch
 $ rsync -aic ../.github/ .github/ --delete
@@ -81,7 +85,7 @@ $ cp ../Dockerfile .
 ...
 
 # run workflow
-$ gh workflow run --ref 1.0.x
+$ gh workflow run --ref $( git branch --show-current )
 ```
 
 # RC release
