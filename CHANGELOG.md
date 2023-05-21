@@ -1,3 +1,15 @@
+## [2.0.1](https://github.com/momiji/gh-workflows/compare/v2.0.0...v2.0.1) (2023-05-21)
+
+
+### Bug Fixes
+
+* automatic ([d307072](https://github.com/momiji/gh-workflows/commit/d307072b85d462b53cf7dc9f30daf204b18ea37a))
+* automatic ([af6eed7](https://github.com/momiji/gh-workflows/commit/af6eed78fad63b8d14cbce66d53580473b3b1a82))
+* automatic ([86d9464](https://github.com/momiji/gh-workflows/commit/86d94642b2f74df0317715dde29aaf48cb9d1c6e))
+* automatic ([7ab05e0](https://github.com/momiji/gh-workflows/commit/7ab05e0edae8f16994f62c460e451389d8a12565))
+* automatic ([9769e26](https://github.com/momiji/gh-workflows/commit/9769e265e78e14c160db507e5c0c7d7140463804))
+* automatic ([d957fae](https://github.com/momiji/gh-workflows/commit/d957fae1d94ab30c654896b2dc5adebcb399e38b))
+
 ## [2.0.1-rc.2](https://github.com/momiji/gh-workflows/compare/v2.0.1-rc.1...v2.0.1-rc.2) (2023-05-21)
 
 
