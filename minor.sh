@@ -8,6 +8,7 @@ BASE="$( basename "$(pwd)" )"
 [[ "$BASE" = *".x" ]] && {
     rsync -aicO ../.github/ .github/
     rsync -aicO ../.releaserc .
+    git add .github .releaserc
 }
 
 date > fix
