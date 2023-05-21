@@ -1,3 +1,10 @@
+## [2.0.1-rc.1](https://github.com/momiji/gh-workflows/compare/v2.0.1-beta.1...v2.0.1-rc.1) (2023-05-21)
+
+
+### Bug Fixes
+
+* automatic ([86d9464](https://github.com/momiji/gh-workflows/commit/86d94642b2f74df0317715dde29aaf48cb9d1c6e))
+
 ## [2.0.1-beta.1](https://github.com/momiji/gh-workflows/compare/v2.0.0...v2.0.1-beta.1) (2023-05-21)
 
 
