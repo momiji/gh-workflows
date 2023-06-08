@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/momiji/gh-workflows/compare/v2.0.1...v2.1.0) (2023-06-08)
+
+
+### Features
+
+* automatic ([4866f99](https://github.com/momiji/gh-workflows/commit/4866f9992fbbfd3de4ff3805d85ca7d22867b4ba))
+* automatic ([0a07356](https://github.com/momiji/gh-workflows/commit/0a07356e8417e44e8caca7f61bd053313eac323f))
+
 ## [2.0.1](https://github.com/momiji/gh-workflows/compare/v2.0.0...v2.0.1) (2023-05-21)
 
 
