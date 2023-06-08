@@ -18,7 +18,7 @@ git commit -m "feat: automatic"
 git pull --rebase
 git push
 
-gh workflow run --ref $( git branch --show-current )
+#gh workflow run --ref $( git branch --show-current )
 
 #GITHUB_TOKEN=$(gh auth token)
 #curl -fsSL -H "Accept: application/vnd.github.everest-preview+json" -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/momiji/gh-workflows/dispatches -d '{ "event_type": "manual-semantic" }'
